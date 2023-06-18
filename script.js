@@ -64,32 +64,11 @@ function validasi() {
     var number = document.getElementById("number").value;
     var address = document.getElementById("address").value;
     var pesan = document.getElementById("pesan").value;
-    if (nama != "" && email!="" && number !=""&& address !="" && pesan !="" ) {
+    if (nama != "" && email!="" && number !=""&& address !="" && pesan !="" ) 
+    {
+        alert('Pesan anda telah kami terima');
         return true;
     }else{
         alert('Anda harus mengisi data dengan lengkap !');
     }
 };
-
-
-
-const scriptURL = "https://script.google.com/macros/s/AKfycbzTG172gaVBcIsE29LvX2lUxfnRgaQEG1Q_fmk92RuAm84miHDJ1gBhO1tFvVjTxhw/exec";
-      const form = document.forms["contact"];
-      const myAlert = document.querySelector(".my-alert");
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        // ketika tombol submit diklik
-        // tampilkan tombol loading, hilangkan tombol kirim
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            // tampilkan tombol kirim, hilangkan tombol loading
-            // tampilakn alert
-            myAlert.classList.toggle("d-none");
-            // reset formnya
-            form.reset();
-            console.log("Success!", response);
-          })
-          .catch((error) => console.error("Error!", error.message));
-      });
-    

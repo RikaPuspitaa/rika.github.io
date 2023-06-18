@@ -42,7 +42,7 @@
                 in the field of web development</p>
             
             <div class="sosial-media">
-                <a href="https://github.com/RikaPuspitaa"><i class='bx bxl-github'></i></a>
+                <a href="https://www.tiktok.com/@noykuzaa?is_from_webapp=1&sender_device=pc"><i class='bx bxl-tiktok'></i></a>
                 <a href="https://www.youtube.com/@rikapuspita4381"><i class='bx bxl-youtube'></i></a>
                 <a href="https://www.instagram.com/ini_puspitaa"><i class='bx bxl-instagram-alt' ></i></a>
                 <a href="https://wa.me/6285749472286"><i class='bx bxl-whatsapp'></i></a>
@@ -93,7 +93,7 @@
                     <i class='bx bxs-file-html'></i>
                     <h3>HTML</h3>
                     <div class="w3-border">
-                        <div class="w3" style="height:24px;width:70%">70%</div>
+                        <div class="w3" style="height:24px;width:80%">80%</div>
                       </div>
                     
                 </div>
@@ -113,7 +113,7 @@
                     <h3>CSS</h3>
                     
                     <div class="w3-border">
-                        <div class="w3" style="height:24px;width:60%">60%</div>
+                        <div class="w3" style="height:24px;width:60%">70%</div>
                       </div>
                    
                 </div>
@@ -221,17 +221,17 @@
                 </b>
             </h2>
 
-            <form action="" onSubmit="validasi()">
+            <form name="contact-form" action="" onSubmit="validasi()">
                 <div class="input-box">
-                    <input type="text" id="nama" placeholder="Name">
-                    <input type="email" id="email"  placeholder="Email Address">
+                    <input type="text" id="nama" name="nama" placeholder="Name">
+                    <input type="email" id="email" name="email" placeholder="Email Address">
                 </div>
                 <div class="input-box">
-                    <input type="number" id="number" placeholder="Mobile Number">
-                    <input type="text" id="address" placeholder="Home Address">
+                    <input type="number" id="number" name="number" placeholder="Mobile Number">
+                    <input type="text" id="address" name="address" placeholder="Home Address">
                 </div>
 
-                <textarea name="" id="pesan" cols="30" rows="10" placeholder="Your Message" >
+                <textarea name="pesan" id="pesan"  cols="30" rows="10" placeholder="Your Message" >
                     
                 </textarea>
                 <input type="submit" value="Send Message" class="btn"> 
@@ -243,7 +243,7 @@
 
         <footer class="footer">
             <div class="footer-text">
-                <p>Copyright &copy; 2023 by Codehal-Puspita | All Right Reserved.</p>
+                <p>Copyright &copy; 2023 by ini-Puspita | All Right Reserved.</p>
             </div>
 
             <div class="footer-iconTop">
@@ -252,6 +252,7 @@
         </footer>
 
         <!--scroll reveal -->
+        
 
         <script src="https://unpkg.com/scrollreveal"></script>
          
@@ -260,10 +261,21 @@
 
 
        <!--custom js-->
-        <script src="script.js">
-        
-    
-        </script>
+        <script src="script.js"></script>
+
+  
+  
+  <script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyRacnSr0Q2LR8sApqOPz9MhzXmLHCayrtdr0yCjStvOBw8OrRiNTIEC9XREsLvobis/exec'
+  const form = document.forms['contact-form']
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => form.reset(); console.log('Success!', response))
+      .catch(error => console.error('Error!', error.message))
+  });
+ </script>
         
     </body>
 </html>
